@@ -1,0 +1,100 @@
+/* RESETS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+}
+
+html, body {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/* GLOBAL/REUSABLE CLASSES */
+.text-center {
+  text-align: center;
+}
+
+/* Customizations */
+
+#dash-header {
+    padding: 1% 0;
+    background: rgb(110, 110, 235);
+    color:aliceblue;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-container {
+    
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    border-radius: 4px;
+}
+
+.search-container h2 {
+    text-align: center;
+}
+
+
+article {
+    
+    
+    padding: 40px 80px;
+}    
+
+input {
+    padding: 8px 60px 8px 10px;
+    border-radius: 3px;
+}
+
+#city-search-btn {
+    padding: 8px 15px;
+    background: rgb(110, 110, 235); 
+    color:aliceblue;
+    border-radius: 5px;
+}
+
+.past-search {
+    font-weight: 700;
+    padding: 15px 40px;
+    margin-bottom: 3px;
+    background-color: rgb(160, 153, 153);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.weather-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.today-weather {
+    border: 1px solid black;
+    padding: 100px;
+}
+
+.five-day-weather {
+    border: 1px solid black;
+    padding: 100px;
+}
+
