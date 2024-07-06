@@ -40,7 +40,8 @@ button {
 
 .container {
     display: flex;
-    justify-content: space-between;
+    
+    width: 100%;
 }
 
 .search-container {
@@ -49,6 +50,7 @@ button {
     flex-direction: column;
     border: 3px solid black;
     border-radius: 4px;
+    
 }
 
 .search-container h2 {
@@ -86,15 +88,27 @@ input {
 .weather-container{
     display: flex;
     flex-direction: column;
+    width: 500px;
+    
+    
 }
 
 .today-weather {
     border: 1px solid black;
-    padding: 100px;
+      
+}
+
+.current-weather {
+  padding-right: 5%;
+}
+
+.currentImg {
+  width: 100%;
 }
 
 .five-day-weather {
     border: 1px solid black;
     padding: 100px;
+    
 }
 
