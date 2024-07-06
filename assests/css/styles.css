@@ -9,6 +9,7 @@
 
 html, body {
   height: 100%;
+  width:100%;
 }
 
 img {
@@ -39,9 +40,11 @@ button {
 }
 
 .container {
-    display: flex;
-    
-    width: 100%;
+  display: flex;
+   /* Change flex direction to column */
+  justify-content: center; /* Center the items horizontally */
+  margin: 0 7%; /* Remove any margin */
+  padding: 0; /* Remove any padding */
 }
 
 .search-container {
@@ -88,27 +91,30 @@ input {
 .weather-container{
     display: flex;
     flex-direction: column;
-    width: 500px;
+   
     
     
 }
-
+.today-weather-content {
+  margin: 0;
+}
 .today-weather {
-    border: 1px solid black;
-      
+    border: 3px solid black;
+    
 }
 
 .current-weather {
   padding-right: 5%;
+  box-sizing: border-box;
 }
 
 .currentImg {
-  width: 100%;
+  
 }
 
 .five-day-weather {
-    border: 1px solid black;
-    padding: 100px;
-    
+    border: 3px solid black;
+    padding: 2%;
+    box-sizing: border-box;
 }
 

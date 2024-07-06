@@ -97,13 +97,15 @@ function outputCurrentWeather(currentData) {
     console.log(currentData);
     
     $currentOutput.html(`
-            <div class="d-flex flex-row ">
+            <div class="">
                 <div>
-                    <p>Current Temp: ${currentData.main.temp}</p>
-                    <p>Conditions: ${currentData.weather[0].description}</p>
+                    <p class="today-weather-content"  >Current Temp: ${currentData.main.temp}</p>
+                    <p class="today-weather-content" >Conditions: ${currentData.weather[0].description}</p>
+                    <p class="today-weather-content" >Wind Speed: ${currentData.wind.speed} mph</p>
+                    <p class="today-weather-content" >Humidity: ${currentData.main.humidity}</p>
                 </div>
-                <div>
-                    <img class="currentImg" src="https://openweathermap.org/img/wn/${currentData.weather[0].icon}@2x.png" alt="weather icon image">
+                <div class="">
+                    <img class="currentImg ms-5 " src="https://openweathermap.org/img/wn/${currentData.weather[0].icon}@2x.png" alt="weather icon image">
                 </div>
             </div>
         `);
