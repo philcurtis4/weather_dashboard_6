@@ -1,57 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="./assests/css/styles.css">
+  <link rel="stylesheet" href="./assests/css/styles.css">
 </head>
+
 <body>
-    <header>
-        <h1 id="dash-header" class="text-center">Weather Dashboard</h1>
-    </header>
-    
-    <main class="container">
+  <header>
+    <h1 id="dash-header" class="text-center">Weather Dashboard</h1>
+  </header>
 
-        <div class="search-container">
-            <h2>City Search</h2>
-          <article id="search-area">
-            <input id="search" type="text" class="city-search" placeholder="Please enter a city">
-            <button id="city-search-btn" >Search</button>
-          </article>
-          <!--this is where the div for previous search go-->
+  <main class="container-fluid">
+    <div class="row">
+      <div class="search-container col-4">
+        <h2>City Search</h2>
+        <article id="search-area">
+          <input id="search" type="text" class="city-search" placeholder="Please enter a city">
+          <button id="city-search-btn">Search</button>
+        </article>
+        <!--this is where the div for previous search go-->
+        <div class="history-wrapper">
 
         </div>
-  
-  
-        <div class="weather-continer ">
-          <div class="today-weather h-20 ps-5 pt-3" >
-            <h2 class="city-output"></h2>
-            <p class="weather-output"></p>
-  
-          </div>
-          <div class="five-day-weather d-flex flex-row">
-  
-          </div >
-  
+
+
+      </div>
+
+
+      <div class="weather-continer col-8">
+        <div class="today-weather h-20 ps-5 pt-3">
+          <h2 class="city-output">Please use the search feature to get weather and forecast</h2>
+          <div class="weather-output"></div>
+
         </div>
-      </main>
-  
+        <div class="five-day-weather d-flex flex-row">
+          <p>No forecast data</p>
+        </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+      </div>
+    </div>
+
+  </main>
 
 
-    <script src="./assests/js/logic.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+
+
+  <script src="./assests/js/logic.js"></script>
 </body>
+
 </html>

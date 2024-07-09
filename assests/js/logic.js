@@ -1,6 +1,7 @@
 const searchContainer = $('.search-container');
 const searchInput = $('#search');
 const searchBtn = $('#city-search-btn');
+const historyWrapper = $('.history-wrapper');
 
 
 // function that gets cities from local
@@ -27,10 +28,7 @@ function storeCity (eventObj) {
 
     //create an object that has each value and date 
 
-    const cityObj = {
-        city: cityVal,
-        
-    };
+    
     
 
     //pull old data from local or have empty array
@@ -39,17 +37,21 @@ function storeCity (eventObj) {
 
     //push the blogs obj to the blogs array then convert to JSON
 
-    cities.push(cityObj);
-    const jsonArray = JSON.stringify(cities);
+    if(!cities.includes(cityVal)){
+        cities.push(cityVal);
+        const jsonArray = JSON.stringify(cities);
 
     //save the blogs array to the local storage
     
 
-    localStorage.setItem('cities', jsonArray);
+        localStorage.setItem('cities', jsonArray);
+    }
 
     //reset form values
-    inputEl.val('');
-    outputCityName();
+    
+    outputSearchHistory();
+
+    
 }
 
 // api key for get 
@@ -82,8 +84,8 @@ function outputCityName (city) {
 
 //function that uses city name to get info ffrom openweather
 
-function getCurrentweather() {
-    const city = getCityName();
+function getCurrentweather(city) {
+    console.log(city);
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKeyW}&units=imperial`;
     
     return $.get(url);
@@ -97,14 +99,15 @@ function outputCurrentWeather(currentData) {
     console.log(currentData);
     
     $currentOutput.html(`
-            <div class="">
+            <div>
                 <div>
+                    <h4>${currentData.name}</h4>
                     <p class="today-weather-content"  >Current Temp: ${currentData.main.temp}</p>
                     <p class="today-weather-content" >Conditions: ${currentData.weather[0].description}</p>
                     <p class="today-weather-content" >Wind Speed: ${currentData.wind.speed} mph</p>
                     <p class="today-weather-content" >Humidity: ${currentData.main.humidity}</p>
                 </div>
-                <div class="">
+                <div>
                     <img class="currentImg ms-5 " src="https://openweathermap.org/img/wn/${currentData.weather[0].icon}@2x.png" alt="weather icon image">
                 </div>
             </div>
@@ -132,7 +135,7 @@ function outputWeatherForcast (forcastData) {
     $forcastOutput.empty();
     
     const filtered = forcastData.list.filter(function (forcastObj) {
-        if(forcastObj.dt_txt.includes('12')) return true;
+        if(forcastObj.dt_txt.includes('12:00')) return true;
     });
     console.log(filtered);
     filtered.forEach(function (forcastObj) {
@@ -146,6 +149,8 @@ function outputWeatherForcast (forcastData) {
             
             `)
     })
+
+    searchInput.val('');
 }
 
 
@@ -159,29 +164,39 @@ function outputWeatherForcast (forcastData) {
 
 
 //function that adds the previous searches to a list on the html
-function addPreviousSearch () {
-    const searchVal = searchInput.val();
-    
-    searchContainer.append(`
-        <div class="past-search">${searchVal}</div>
-        `)
+function outputSearchHistory () {
+    const cities = getCities();
+    historyWrapper.empty();
+
+    cities.forEach(function (city) {
+
+        historyWrapper.append(`
+            <button class="past-search">${city}</button>
+            `)
+    });
 }
 
 //function that runs when page is loaded with event listeners
 
 function init() {
-searchBtn.on('click', addPreviousSearch);
-searchBtn.on('click', function (eventObj) {
-    storeCity(eventObj);
-    getCurrentweather(eventObj)
-        .then(outputCurrentWeather)
-        .then(getWeatherForcast)
-        .then(outputWeatherForcast)
-});
-
-outputCityName();
-outputCurrentWeather();
-addPreviousSearch();
+    
+    $(searchBtn).add(historyWrapper).on('click', function (eventObj) {
+       
+        const isSearch = eventObj.target.id;
+        
+        if(isSearch){
+            storeCity(eventObj);
+        }
+        console.log(searchInput.val());
+        getCurrentweather(isSearch ? searchInput.val() : eventObj.target.innerText)
+            .then(outputCurrentWeather)
+            .then(getWeatherForcast)
+            .then(outputWeatherForcast)
+    });
+    outputSearchHistory();
+    // outputCityName();
+    // outputCurrentWeather();
+    // addPreviousSearch();
 }
 
 init();

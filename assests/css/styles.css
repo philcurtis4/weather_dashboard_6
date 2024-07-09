@@ -43,16 +43,16 @@ button {
   display: flex;
    /* Change flex direction to column */
   justify-content: center; /* Center the items horizontally */
-  margin: 0 7%; /* Remove any margin */
+  /* margin: 0 7%; Remove any margin */
   padding: 0; /* Remove any padding */
 }
 
 .search-container {
     
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     border: 3px solid black;
-    border-radius: 4px;
+    border-radius: 4px; */
     
 }
 
@@ -108,9 +108,7 @@ input {
   box-sizing: border-box;
 }
 
-.currentImg {
-  
-}
+
 
 .five-day-weather {
     border: 3px solid black;
