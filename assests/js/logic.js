@@ -101,7 +101,7 @@ function outputCurrentWeather(currentData) {
     $currentOutput.html(`
             <div>
                 <div>
-                    <h4>${currentData.name}</h4>
+                    <h2 class="fs-1">${currentData.name}</h2>
                     <p class="today-weather-content"  >Current Temp: ${currentData.main.temp}</p>
                     <p class="today-weather-content" >Conditions: ${currentData.weather[0].description}</p>
                     <p class="today-weather-content" >Wind Speed: ${currentData.wind.speed} mph</p>
@@ -153,7 +153,15 @@ function outputWeatherForcast (forcastData) {
     searchInput.val('');
 }
 
+//function that removes the ask to input info element
 
+function hide () {
+    const $askForInput = $('.city-output');
+
+
+
+
+}
 
 
 
