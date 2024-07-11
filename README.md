@@ -13,7 +13,7 @@ Here is a screenshot of the page.
 ![image of weather dashboard](./assests/images/screenshot.jpg)
     
 ## Credits
-This was created by Philip Curtis with hewlp of the resources of the rutgers bootcamp.
+This was created by Philip Curtis with help of the resources of the rutgers bootcamp.
 ## License
 This project has a MIT License. For more information read the LICENSE file.
 ---
