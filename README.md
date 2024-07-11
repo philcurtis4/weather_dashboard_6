@@ -5,11 +5,12 @@ This project was undertaken as part of a coding bootcamp. The point of this chal
 ## Installation
 If you wish to run this project locally on your own computer, assuming you have git installed, input the following code in your terminal.
 git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
+
 ## Usage
 The live site may be viewed at the following url.
 https://github.com/philcurtis4/weather_dashboard_6
 Here is a screenshot of the page.
-![Alt text](./assets/images/final-result.png)
+![image of weather dashboard](./assests/images/screenshot.jpg)
     
 ## Credits
 This was created by Philip Curtis with hewlp of the resources of the rutgers bootcamp.
