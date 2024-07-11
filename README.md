@@ -4,7 +4,7 @@ This project was undertaken as part of a coding bootcamp. The point of this chal
 
 ## Installation
 If you wish to run this project locally on your own computer, assuming you have git installed, input the following code in your terminal.
-git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
+git clone https://github.com/philcurtis4/weather_dashboard_6
 
 ## Usage
 The live site may be viewed at the following url.
