@@ -142,8 +142,10 @@ function outputWeatherForcast (forcastData) {
         $forcastOutput.append(`
             
                 <div class="current-weather p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3 ms-3" >
-                    <h2>${forcastObj.dt_txt}</h2>
-                    <h3>Temp: ${forcastObj.main.temp}</h3>
+                    <h3>${forcastObj.dt_txt}</h3>
+                    <p>Temp: ${forcastObj.main.temp}</p>
+                    <p>Wind Speed: ${forcastObj.wind.speed} mph</p>
+                    <p>Humidity: ${forcastObj.main.humidity}</p>
                     <img src="https://openweathermap.org/img/wn/${forcastObj.weather[0].icon}@2x.png" alt="weather icon image">
                 </div>
             
